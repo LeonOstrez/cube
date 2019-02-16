@@ -17,8 +17,8 @@ window.requestAnimFrame = (function() {
       //VARIABLES
       //************
       var _Canvas;
-      let _frontImageSrc = './images/home4.jpg';
-      let _backImageSrc = './images/home.jpg';
+      let _frontImageSrc = './images/firstpage/home4.jpg';
+      let _backImageSrc = './images/firstpage/home.jpg';
       let _frontImage;
       let _backImage;
       let _blackMask;
@@ -29,7 +29,7 @@ window.requestAnimFrame = (function() {
       let _pauseTime = 0.25;
       let _delayTime = 0.08;
       let _maskArray = [];
-      let _srcArray = ["http://insidedown.com/codepen/stock/newstain1.png", "http://insidedown.com/codepen/stock/newstain2.png", "http://insidedown.com/codepen/stock/newstain3.png"];
+      let _srcArray = ["./images/firstpage/newstain1.png", "./images/firstpage/newstain2.png", "./images/firstpage/newstain3.png"];
       
       //************
       //METHODS
@@ -179,8 +179,28 @@ window.requestAnimFrame = (function() {
 
 
 
+  var i = 0;
+  var txt1 = "Hi, I am Leon.";
+  var txt2 = "Full stack web developer.";
+  var speed = 100;
 
-
+  function typeWriter1() {
+  if (i < txt1.length) {
+      document.getElementById("type1").innerHTML += txt1.charAt(i);
+      i++;
+      setTimeout(typeWriter1, speed);
+    } else {
+        i = 0;
+        typeWriter2();
+    }
+  }
+  function typeWriter2() {
+    if (i < txt2.length) {
+          document.getElementById("type2").innerHTML += txt2.charAt(i);
+          i++;
+          setTimeout(typeWriter2, speed);
+    }
+}
 
 var horizontal = $(window).width() > $(window).height();
 if (!horizontal) $('.carousel').addClass("height100vh");
@@ -193,7 +213,12 @@ $(function() {
 
     setTimeout(function(){
         document.querySelector('.scalebox.collapsible').classList.toggle('collapsed');
+        document.querySelector('.my-logo-box.collapsible').classList.toggle('collapsed');
     }, 1500);
+
+    setTimeout(function(){
+        typeWriter1();
+    }, 4500);
 
 
 });

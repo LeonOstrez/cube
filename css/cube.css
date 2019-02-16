@@ -46,11 +46,19 @@ canvas {
 
    .my-logo-box {
     position: relative;
-    width: 6vh;
-    height: 6vh;
+    transition:max-height 3s ease-out, max-width 3s ease-out;
+    width: 30vh;
+    height: 30vh;
     left:47%;
     top:5px;
+    max-height:100vh; 
+    max-width:100vh; 
   }
+  .my-logo-box.collapsed {
+    max-height: 6vh;
+    max-width: 6vh;
+  }
+  
 
    .Llogo{
       position: absolute;
@@ -207,7 +215,8 @@ canvas {
     z-index: 40;
     width: 100%;
     height: 100vh;
-    background-color: rgb(151, 151, 151);
+    background: rgb(74,68,176);
+    background: linear-gradient(48deg, rgba(74,68,176,1) 0%, rgba(236,121,50,1) 100%);
     -webkit-transform-origin: 50% 0%;
     -ms-transform-origin: 50% 0%;
     transform-origin: 50% 0%;
@@ -223,7 +232,7 @@ canvas {
   
   .box2 { 
     width: 100%;
-    height: 50%;
+    height: 70%;
   }
 
   .skills {
@@ -261,7 +270,7 @@ canvas {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 40px;
+    height: 10vh;
   }
   img {
     height: 100%;
@@ -280,6 +289,14 @@ canvas {
     text-align: center;
     color: #555;
     margin-bottom: 0;
+  }
+  .myh4 {
+      color: black;
+      font-family: "Cooper Black", serif;
+      font-size: 24px;
+      /* -webkit-text-fill-color: black; 
+      -webkit-text-stroke-width: 0px;
+      -webkit-text-stroke-color: white; */
   }
   .height100 {
     height: 80%;
@@ -340,7 +357,8 @@ canvas {
     justify-content: center;
   }
 
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; 
+    word-break: break-word;}
 
 body { font-family: sans-serif; }
 
@@ -349,112 +367,22 @@ body { font-family: sans-serif; }
   height: 40vh;
 }
 .footer-text {
-  font-size: 10px;
+  font-size: 15px;
+}
+.contact-box {
+  width:70vw;
+  overflow: auto;
+}
+.contact {
+  font-size: 25px;
+  color:black;
+}
+.contact2 {
+  font-size: 15px;
+  color:black;
+}
+.contact3 {
+  font-size: 45px;
+  color:black;
 }
 
-@import "compass/css3";
-
-.separator {
-  margin-top: 40px;
-}
-/* 3D Cube */
-.space3d {
-  perspective: 1000px;
-  width: 250px;
-  height: 250px;
-  text-align: center;
-  display: inline-block;
-}
-._3dbox {
-  display: inline-block;
-  transition: all 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transform: rotateX(-15deg) rotateY(15deg);
-}
-._3dface {
-  overflow: hidden;
-  position: absolute;
-  border: 1px solid #888;
-  background: #fff;
-  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
-  color: #333;
-  line-height: 250px;
-  opacity: 0.8;
-}
-._3dface--front {
-  width: 250px;
-  height: 250px;
-  transform: translate3d(0, 0, 125px);
-}
-._3dface--top {
-  width: 250px;
-  height: 250px;
-  transform: rotateX(90deg) translate3d(0, 0, 125px);
-}
-._3dface--bottom {
-  width: 250px;
-  height: 250px;
-  transform: rotateX(-90deg) translate3d(0, 0, 125px);
-}
-._3dface--left {
-  width: 250px;
-  height: 250px;
-  left: 50%;
-  margin-left: -125px;
-  transform: rotateY(-90deg) translate3d(0, 0, 125px);
-}
-._3dface--right {
-  width: 250px;
-  height: 250px;
-  left: 50%;
-  margin-left: -125px;
-  transform: rotateY(90deg) translate3d(0, 0, 125px);
-}
-._3dface--back {
-  width: 250px;
-  height: 250px;
-  transform: rotateY(180deg) translate3d(0, 0, 125px);
-}
-#radio-left:checked ~ .space3d ._3dbox {
-  transform: rotateY(90deg);
-}
-#radio-right:checked ~ .space3d ._3dbox {
-  transform: rotateY(-90deg);
-}
-#radio-bottom:checked ~ .space3d ._3dbox {
-  transform: rotateX(90deg);
-}
-#radio-top:checked ~ .space3d ._3dbox {
-  transform: rotateX(-90deg);
-}
-#radio-back:checked ~ .space3d ._3dbox {
-  transform: rotateY(180deg);
-}
-._3dface--front {
-  background: url(https://2.bp.blogspot.com/-JxKfUObT4L8/UYYaRhRNJmI/AAAAAAAAAUY/243IlIOKj2c/s320/brahama.jpg);
-  background-size: 100%;
-}
-._3dface--left {
-  background: url(https://4.bp.blogspot.com/-HGFGdCGFTkw/UXVq6PNmS4I/AAAAAAAAAUE/hBNmVCOVlu4/s400/durga+wm.jpg);
-  background-size: auto 100%;
-}
-._3dface--right {
-  background: url(https://2.bp.blogspot.com/-yrnBD8wJ-g0/UNRtPF8pR7I/AAAAAAAAATE/YSpLvqTNyoQ/s320/A+P+J+abdul+kalam_+swm+.jpg);
-  background-size: auto 100%;
-}
-._3dface--top {
-  background: url(https://3.bp.blogspot.com/-mySu8dy4ux4/ULiVKS4YBbI/AAAAAAAAAR0/vBMi_4dAPDE/s400/rajiv+dixit+s.jpg);
-  background-size: auto 100%;
-}
-._3dface--bottom {
-  background: url(https://2.bp.blogspot.com/-B9QWFtc9bVY/UHFs7y9GqkI/AAAAAAAAARI/YLDkoHYr3g4/s400/Gau+wm.jpg);
-  background-size: auto 100%;
-}
-._3dface--back {
-  background: url(https://3.bp.blogspot.com/-ofufG97PpiU/UBzXu-1AisI/AAAAAAAAAP0/iDnhOh-vrb8/s400/shiv+ji.jpg);
-  background-size: auto 100%;
-}
